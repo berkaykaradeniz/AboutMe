@@ -1,8 +1,16 @@
 @tailwind base;
 @tailwind components;
-
-html {
-  @apply font-body antialiased;
-}
-
 @tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    @apply font-body antialiased text-slate-800 bg-white;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
